@@ -7,7 +7,7 @@ from binance_f.impl.utils.timeservice import *
 from binance_f.model import *
 # For develop
 from binance_f.base.printobject import *
-
+from binance_f.base import createlogger
 
 class RestApiRequestImpl(object):
 
@@ -15,6 +15,7 @@ class RestApiRequestImpl(object):
         self.__api_key = api_key
         self.__secret_key = secret_key
         self.__server_url = server_url
+        self.logger = createlogger.createLogger(level='DEBUG', file='binance_future_api.log')
 
     def __create_request_by_get(self, url, builder):
         request = RestApiRequest()
@@ -32,10 +33,9 @@ class RestApiRequestImpl(object):
         request.header.update({"X-MBX-APIKEY": self.__api_key})
         request.url = url + "?" + builder.build_url()
          # For develop
-        print("====== Request ======")
-        print(request)
-        PrintMix.print_data(request)
-        print("=====================")
+        self.logger.debug("====== Request ======")
+        self.logger.debug(request)
+        self.logger.debug("=====================")
         return request
 
     def __create_request_by_post_with_signature(self, url, builder):
@@ -50,10 +50,9 @@ class RestApiRequestImpl(object):
         request.post_body = builder.post_map
         request.url = url + "?" + builder.build_url()
         # For develop
-        print("====== Request ======")
-        print(request)
-        PrintMix.print_data(request)
-        print("=====================")
+        self.logger.debug("====== Request ======")
+        self.logger.debug(request)
+        self.logger.debug("=====================")
         return request
 
     def __create_request_by_delete_with_signature(self, url, builder):
@@ -67,10 +66,9 @@ class RestApiRequestImpl(object):
         request.header.update({"X-MBX-APIKEY": self.__api_key})
         request.url = url + "?" + builder.build_url()
         # For develop
-        print("====== Request ======")
-        print(request)
-        PrintMix.print_data(request)
-        print("=====================")
+        self.logger.debug("====== Request ======")
+        self.logger.debug(request)
+        self.logger.debug("=====================")
         return request
 
     def __create_request_by_get_with_signature(self, url, builder):
@@ -84,10 +82,9 @@ class RestApiRequestImpl(object):
         request.header.update({"X-MBX-APIKEY": self.__api_key})
         request.url = url + "?" + builder.build_url()
         # For develop
-        print("====== Request ======")
-        print(request)
-        PrintMix.print_data(request)
-        print("=====================")
+        self.logger.debug("====== Request ======")
+        self.logger.debug(request)
+        self.logger.debug("=====================")
         return request
 
     def __create_request_by_put_with_signature(self, url, builder):
@@ -101,10 +98,9 @@ class RestApiRequestImpl(object):
         request.header.update({"X-MBX-APIKEY": self.__api_key})
         request.url = url + "?" + builder.build_url()
         # For develop
-        print("====== Request ======")
-        print(request)
-        PrintMix.print_data(request)
-        print("=====================")
+        self.logger.debug("====== Request ======")
+        self.logger.debug(request)
+        self.logger.debug("=====================")
         return request
         
     def get_servertime(self):
