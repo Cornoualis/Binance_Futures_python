@@ -35,6 +35,7 @@ class RestApiRequestImpl(object):
          # For develop
         self.logger.debug("====== Request ======")
         self.logger.debug(request)
+        PrintMix.print_data(request)
         self.logger.debug("=====================")
         return request
 
@@ -52,6 +53,7 @@ class RestApiRequestImpl(object):
         # For develop
         self.logger.debug("====== Request ======")
         self.logger.debug(request)
+        PrintMix.print_data(request)
         self.logger.debug("=====================")
         return request
 
@@ -68,6 +70,7 @@ class RestApiRequestImpl(object):
         # For develop
         self.logger.debug("====== Request ======")
         self.logger.debug(request)
+        PrintMix.print_data(request)
         self.logger.debug("=====================")
         return request
 
@@ -84,6 +87,7 @@ class RestApiRequestImpl(object):
         # For develop
         self.logger.debug("====== Request ======")
         self.logger.debug(request)
+        PrintMix.print_data(request)
         self.logger.debug("=====================")
         return request
 
@@ -100,6 +104,7 @@ class RestApiRequestImpl(object):
         # For develop
         self.logger.debug("====== Request ======")
         self.logger.debug(request)
+        PrintMix.print_data(request)
         self.logger.debug("=====================")
         return request
         
